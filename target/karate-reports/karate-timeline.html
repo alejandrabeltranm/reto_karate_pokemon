@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3},{"content":"pool-2-thread-4","id":4},{"content":"pool-2-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"pokemon\/pokeapi\/MovimientosYPowerPokemon[1.1:34]","start":1730992512138,"end":1730992514190,"title":"pokemon\/pokeapi\/MovimientosYPowerPokemon[1.1:34] 10:15:12.138-10:15:14.190 Obtener movimientos en orden alfabético y validar el poder de un ataque"},{"id":2,"group":2,"content":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[1:3]","start":1730992512137,"end":1730992513388,"title":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[1:3] 10:15:12.137-10:15:13.388 Verify that Pokemon API returns a 200 status for squirtle"},{"id":3,"group":3,"content":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.1:28]","start":1730992512137,"end":1730992514050,"title":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.1:28] 10:15:12.137-10:15:14.050 Encontrar las evoluciones del Pokémon y hacer match con las evoluciones conocidas"},{"id":4,"group":4,"content":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.2:29]","start":1730992512137,"end":1730992514050,"title":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.2:29] 10:15:12.137-10:15:14.050 Encontrar las evoluciones del Pokémon y hacer match con las evoluciones conocidas"},{"id":5,"group":5,"content":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.3:30]","start":1730992512137,"end":1730992514050,"title":"pokemon\/pokeapi\/PruebaApiYEvolucionesDePokemon[2.3:30] 10:15:12.137-10:15:14.050 Encontrar las evoluciones del Pokémon y hacer match con las evoluciones conocidas"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
